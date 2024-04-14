@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecomas - Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <h1>Shopping Cart</h1>
+
+        <!-- Cart Items -->
+        <div class="cart-items">
+            <div class="cart-item">
+                <img src="mens.jpg" alt="Product 1">
+                <div class="Mens full Outfit">
+                    <h3>Mens clothes</h3>
+                    <p>kshs4999.99</p>
+                    <input type="number" value="1" min="1" max="10">
+                    <button class="btn-remove" onclick="removeCartItem(this)">Remove</button>
+                </div>
+            </div>
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img src="shoes.jpg" alt="Product 1">
+                    <div class="New fashion shoes">
+                        <h3>fashion shoes</h3>
+                        <p>kshs1999.99</p>
+                        <input type="number" value="1" min="1" max="10">
+                        <button class="btn-remove" onclick="removeCartItem(this)">Remove</button>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="cart-summary">
+            <h2>Cart Summary</h2>
+            <p>Total Items: <span id="total-items">1</span></p>
+            <p>Total Price: <span id="total-price">kshs4999.99</span></p>
+            <a href="checkout.html" class="btn">Proceed to Checkout</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="men.png" alt="Ecomas Logo">
+            </div>
+            <div class="footer-info">
+                <h3>Contact Us</h3>
+                <p>Email: contact@ecomas.com</p>
+                <p>Phone: +123 456 789</p>
+                <p>Address: 123 Ecomas Street, City, Country</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ecomas. All rights reserved.</p>
+        </div>
+    </footer>
+    
+
+    <!-- JavaScript for interactive features -->
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<script>
+    function removeCartItem(button) {
+        // Get the parent cart item element
+        let cartItem = button.closest('.cart-item');
+
+        // Remove the cart item from the cart items container
+        cartItem.remove();
+
+        // Update cart summary after removal
+        updateCartSummary();
+    }
+
+    function updateCartSummary() {
+        // Get all the cart items
+        let cartItems = document.querySelectorAll('.cart-item');
+
+        // Update total items and total price based on remaining cart items
+        let totalItems = cartItems.length;
+        let totalPrice = 0;
+
+        cartItems.forEach(item => {
+            // Get the price of each item
+            let price = parseFloat(item.querySelector('.item-details p').textContent.replace('$', ''));
+            totalPrice += price;
+        });
+
+        // Update total items and total price in cart summary
+        document.getElementById('total-items').textContent = totalItems;
+        document.getElementById('total-price').textContent = '$' + totalPrice.toFixed(2);
+    }
+</script>

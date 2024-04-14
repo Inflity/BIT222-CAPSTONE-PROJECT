@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecomas - Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <h1>Checkout</h1>
+
+        <!-- Cart Summary -->
+        <div class="cart-summary">
+            <h2>Cart Summary</h2>
+            <!-- Display cart items and total price here -->
+            <div class="cart-item">
+                <p>Product Name 1</p>
+                <p class="price">$99.99</p>
+                <p class="quantity">Quantity: 2</p>
+                <p>Total: $199.98</p>
+                <button class="btn-delete" onclick="deleteCartItem(this)">Delete</button>
+            </div>
+            <!-- Add more cart items as needed -->
+
+            <p>Total Items: <span id="total-items">2</span></p>
+            <p>Total Price: <span id="total-price">$199.98</span></p>
+        </div>
+
+        <!-- Checkout Form -->
+        <form action="place_order.php" method="POST">
+            <h2>Shipping Information</h2>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <button type="submit" class="btn">Place Order</button>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ecomas. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for interactive features -->
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<script>
+    function deleteCartItem(button) {
+    // Get the parent element of the delete button, which is the cart item container
+    let cartItem = button.parentElement;
+
+    // Remove the cart item from the cart summary
+    cartItem.remove();
+
+    // Update the total items and total price
+    updateCartSummary();
+}
+
+function updateCartSummary() {
+    // Get all the cart items
+    let cartItems = document.querySelectorAll('.cart-item');
+
+    // Initialize total items and total price variables
+    let totalItems = 0;
+    let totalPrice = 0;
+
+    // Loop through each cart item to calculate the total items and total price
+    cartItems.forEach(item => {
+        // Get the quantity and price of each item
+        let quantity = parseInt(item.querySelector('.quantity').textContent.replace('Quantity: ', ''));
+        let price = parseFloat(item.querySelector('.price').textContent.replace('$', ''));
+
+        // Update the total items and total price
+        totalItems += quantity;
+        totalPrice += quantity * price;
+    });
+
+    // Update the total items and total price displayed in the cart summary
+    document.getElementById('total-items').textContent = totalItems;
+    document.getElementById('total-price').textContent = '$' + totalPrice.toFixed(2);
+}
+</script>

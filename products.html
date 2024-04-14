@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecomas - Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <h1>Our Products</h1>
+
+        <!-- Product Grid -->
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="mens.jpg" alt="Product 1">
+                <h2>Mens full Outfit</h2>
+                <p>kshs4999.99</p>
+                <button class="btn" onclick="addToCart('product1', 'Mens full Outfit', '4999.99')">Add to Cart</button>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="shoes.jpg" alt="Product 2">
+                <h2>New fashion shoes</h2>
+                <p>kshs.1999.99</p>
+                <button class="btn" onclick="addToCart('product1', 'New fashion shoes', '1999.99')">Add to Cart</button>
+            </div>
+
+            <!-- Add more products as needed -->
+
+            <!-- Product 15 -->
+            <div class="product">
+                <img src="womens.jpg" alt="Product 15">
+                <h2>New womens outfit fullpack</h2>
+                <p>kshs.5500.00</p>
+                <button class="btn" onclick="addToCart('product1', 'New womens outfit fullpack', '5500.00')">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="men.png" alt="Ecomas Logo">
+            </div>
+            <div class="footer-info">
+                <h3>Contact Us</h3>
+                <p>Email: matandarua@ecomas.com</p>
+                <p>Phone: +254712345678</p>
+                <p>Address: 00100 Nairobi GPO, Nairobi, Kenya</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ecomas. All rights reserved.</p>
+        </div>
+    </footer>
+    
+
+    <!-- JavaScript for interactive features -->
+    <script src="script.js"></script>
+</body>
+
+</html>

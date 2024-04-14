@@ -1,0 +1,309 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    line-height: 1.6;
+}
+
+/* Navigation bar styles */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column; /* Change to column */
+    align-items: left;
+    background-color: #896cf5;
+    padding: 10px;
+}
+
+nav ul li {
+    margin-bottom: 10px; /* Adjust margin to reduce spacing */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button.btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #9119d6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.btn:hover {
+    background-color: #555;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Circles */
+.footer-logo {
+    width: 120px; /* Adjust the width */
+    height: 120px; /* Adjust the height */
+    border-radius: 65%;
+    background-color: #e6e6e6;
+    display: inline-block;
+    margin: 10px;
+    overflow: hidden; /* Prevents images from overflowing */
+}
+
+.footer-logo img {
+    width: 120%; /* Ensures the image fills the circle */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.circle,
+.rectangle,
+.triangle {
+    width: 200px; /* Adjust the width of each shape */
+    height: 200px; /* Adjust the height of each shape */
+    overflow: hidden;
+    border-radius: 50%; /* For circles */
+    border: 2px solid #ddd; /* Add border for visual separation */
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+.rectangle {
+    border-radius: 10px; /* For rectangles */
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 173px solid #ddd; /* For equilateral triangles */
+}
+
+.circle img,
+.rectangle img,
+.triangle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Triangles */
+/* Stars */
+
+/* Cubic Container */
+.cubic-container {
+    width: 300px; /* Adjust the width of the cubic container */
+    height: 200px; /* Adjust the height of the cubic container */
+    perspective: 1000px; /* Perspective for 3D effect */
+    margin: 10px;
+    overflow: hidden;
+}
+
+.cubic-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; /* Ensures 3D transformations */
+    transition: transform 0.5s ease; /* Smooth transition for hover effect */
+}
+
+.cubic-container:hover .cubic-content {
+    transform: rotateY(180deg); /* Rotate on Y-axis for hover effect */
+}
+
+.cubic-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; /* Hides the back face during rotation */
+}
+
+/* Front face */
+.cubic-front {
+    transform: rotateY(0deg);
+}
+
+/* Back face */
+.cubic-back {
+    transform: rotateY(180deg);
+}
+
+/* Styling the image inside the cubic container */
+.cubic-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the cubic face */
+}
+
+/* Button styling */
+.btn {
+    display: block;
+    width: 100px;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+/* Product Grid Styles */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid layout */
+    gap: 20px; /* Adjust the gap between products */
+}
+
+/* Individual Product Styles */
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.product p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.product .btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product .btn:hover {
+    background-color: #555;
+}
+/* Styles for cart items */
+.cart-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between cart items */
+}
+
+.cart-item {
+    width: 300px; /* Adjust the width of each cart item */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.cart-item .item-details {
+    padding: 10px;
+}
+
+.cart-item h3 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.cart-item p {
+    margin-bottom: 10px;
+    color: #888;
+}
+
+.cart-item input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.cart-item .btn-remove {
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-item .btn-remove:hover {
+    background-color: #d32f2f;
+}
+
